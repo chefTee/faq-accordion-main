@@ -125,7 +125,7 @@ header .title{
         font-size: 1.7em;
     }
     .faq-container{
-        max-width: 90%;
+        width: 90%;
         margin-top: 35%;
     }
     .question .q-container .q{
