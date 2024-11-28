@@ -28,8 +28,7 @@ body{
     background-repeat: no-repeat;
 }
 .faq-container{
-    max-width: 80%;
-    width: max-content;
+    width: 70%;
     height: auto;
     background-color: var(--white);
     padding: 5px 1.5rem 5px 1.5rem;
@@ -95,7 +94,7 @@ header .title{
     display: none;
 }
 .question .answer{
-    width: 100%;
+    width: fit-content;
     padding-bottom: 1.4em;
 }
 .question .answer.close{

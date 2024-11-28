@@ -8,35 +8,39 @@ questions.forEach((question, index) => {
         openBtn[index].classList.toggle("hide");
         closeBtn[index].classList.toggle("hide");
         answers[index].classList.toggle("close");
+})
     });
     //Adding Keyboard Navigation
-    question.setAttribute('tabindex', '0');
-    if (index !== 0) {
-        question.setAttribute('tabindex', '-1')
-    }
-    question.addEventListener('keydown', (e) => {
-        switch(e.key){
-            case 'ArrowDown':
+questions.forEach((question, index) => {
+    question.setAttribute('tabindex', index === 0 ? '0' : '-1')
+});
+
+    questions.forEach((question, index) => {
+        question.addEventListener('keydown', (e) => {
+            switch(e.key){
+                case 'ArrowDown':
                 e.preventDefault();
-                if (index < questions.length - 1) {
-                    questions[index + 1 ].focus();
+                if(index < questions.length - 1){
+                    questions[index + 1].focus();
                 }
                 break;
-            case 'ArrowUp':
+    
+                case 'ArrowUp':
                 e.preventDefault();
-                if (index > 0){
+                if(index > 0){
                     questions[index - 1].focus();
                 }
                 break;
-            case 'Enter':
-            case ' ':
+    
+                case 'Enter':
+                case ' ':
                 e.preventDefault();
                 questions[index].click();
                 break;
-        }
+            }
+    
+        })
     })
-})
-
 //Adding Accessible Rich Internet Applications
 questions.forEach((question, index) => {
     question.setAttribute('role', 'button');
